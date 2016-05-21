@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
     $servername = "telegramdb.cctjzlx6kmlc.ap-northeast-1.rds.amazonaws.com";
     $username = "yongjang";
     $password = "yongjang";
