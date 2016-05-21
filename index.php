@@ -11,7 +11,7 @@
 
     $url = $_GET["url"];
 
-    $sql = "SELECT click_num, meta FROM jobs WHERE url = ".$url;
+    $sql = "SELECT click_num, meta FROM jobs WHERE url = \'".$url."\'";
 
     $result = mysql_query($sql, $conn);
 
