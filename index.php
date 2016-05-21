@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 
     $test = "<h1>".$url."</h1>";
 
-    $sql = "SELECT * FROM jobs WHERE url = '".$url"'";
+    $sql = "SELECT * FROM jobs WHERE url = '".$url."'";
 
     //$result = mysqli_query($conn, $sql);
     $cursor = mysqli_query($conn, $sql);
