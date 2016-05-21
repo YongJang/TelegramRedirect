@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 
     $test = "<h1>".$url."</h1>";
 
-    $sql = "SELECT * FROM jobs WHERE PK_aid = 10";
+    $sql = "SELECT * FROM jobs WHERE url = ";
 
     //$result = mysqli_query($conn, $sql);
     $cursor = mysqli_query($conn, $sql);
@@ -33,6 +33,7 @@ error_reporting(E_ALL);
  ?>
 <html>
         <head>
+          <meta charset="utf-8"/>
           <?php
           echo $meta;
           ?>
