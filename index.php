@@ -5,6 +5,10 @@
     $mysql_db = "telegramdb";
 
     $conn = new mysql_connect($servername, $username, $password);
+    if($conn){
+      die('Could not connect:'.mysql_error());
+    }
+    echo 'Connected successfully';
 //    $dbconn = mysql_select_db($mysql_db, $conn);
 
 //    mysql_query("set names utf8");
@@ -42,3 +46,7 @@
               ?>
         </body>
 </html>
+
+<?php
+  mysql_close($conn);
+ ?>
