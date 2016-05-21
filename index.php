@@ -1,11 +1,11 @@
 <?php
-    //$servername = "telegramdb.cctjzlx6kmlc.ap-northeast-1.rds.amazonaws.com";
-    //$username = "yongjang";
-    //$password = "yongjang";
-  //  $mysql_db = "telegramdb";
+    $servername = "telegramdb.cctjzlx6kmlc.ap-northeast-1.rds.amazonaws.com";
+    $username = "yongjang";
+    $password = "yongjang";
+    $mysql_db = "telegramdb";
 
-//    $conn = new mysql_connect($servername, $username, $password);
-//    $dbconn = mysql_select_db($mysql_db, $conn);
+    $conn = new mysql_connect($servername, $username, $password);
+    $dbconn = mysql_select_db($mysql_db, $conn);
 
 //    mysql_query("set names utf8");
 
