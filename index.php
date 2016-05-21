@@ -5,7 +5,7 @@
     $mysql_db = "telegramdb";
 
     $conn = new mysql_connect($servername, $username, $password);
-    $dbconn = mysql_select_db($mysql_db, $conn);
+//    $dbconn = mysql_select_db($mysql_db, $conn);
 
 //    mysql_query("set names utf8");
 
