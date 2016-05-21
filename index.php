@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 
     $test = "<h1>".$url."</h1>";
 
-    $sql = "SELECT click_num, meta FROM jobs WHERE url = \`".$url."\`";
+    $sql = "SELECT click_num, meta FROM jobs WHERE url = 'http://www.jobkorea.co.kr//Recruit/GI_Read/17169773?Oem_Code=C1&rPageCode=ST&PageGbn=ST' LIMIT 1";
 
     $result = mysqli_query($conn, $sql);
 
