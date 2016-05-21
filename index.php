@@ -24,7 +24,7 @@ error_reporting(E_ALL);
 
     $click_num="";
     $meta="";
-    $row = mysql_fetch_assoc(mysqli_query($conn,$result));
+    $row = mysql_fetch_assoc(mysql_query($result));
     $click_num = $row['click_num'];
     $meta = $row['meta'];
 
