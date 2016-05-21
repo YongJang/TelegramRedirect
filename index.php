@@ -20,11 +20,14 @@ error_reporting(E_ALL);
 
     $sql = "SELECT * FROM jobs WHERE PK_aid = 10";
 
-    $result = mysqli_query($conn, $sql);
+    //$result = mysqli_query($conn, $sql);
+    $cursor = mysql_query($sql);
 
-    $row = mysql_fetch_row($result);
+    //$row = mysql_fetch_row($result);
+    $row = mysql_fetch_row($cursor);
     $click_num = $row[1];
     $meta = $row[2];
+    echo "!!!!";
 
 
  ?>
