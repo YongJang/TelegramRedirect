@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 
     $test = "<h1>".$url."</h1>";
 
-    $sql = "SELECT * FROM jobs WHERE url = \'".$url."\'";
+    $sql = "SELECT * FROM jobs WHERE url = '".$url."' LIMIT 1";
 
     //$result = mysqli_query($conn, $sql);
     $cursor = mysqli_query($conn, $sql);
@@ -45,7 +45,7 @@ error_reporting(E_ALL);
            this is  url
               <?php
                 echo $meta;
-                echo $test;
+                echo $sql;
               ?>
         </body>
 </html>
