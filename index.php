@@ -21,7 +21,7 @@ error_reporting(E_ALL);
     $sql = "SELECT * FROM jobs WHERE PK_aid = 10";
 
     //$result = mysqli_query($conn, $sql);
-    $cursor = mysqli_query($sql);
+    $cursor = mysqli_query($conn, $sql);
 
     //$row = mysql_fetch_row($result);
     $row = mysqli_fetch_row($cursor);
