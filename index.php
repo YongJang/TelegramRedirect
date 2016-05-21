@@ -7,7 +7,7 @@ error_reporting(E_ALL);
     $mysql_db = "telegramdb";
 
     $conn = mysqli_connect($servername, $username, $password, $mysql_db);
-    if($conn){
+    if(!$conn){
       die('Could not connect:'.mysql_error());
     }
     echo 'Connected successfully';
