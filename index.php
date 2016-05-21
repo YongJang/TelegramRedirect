@@ -22,8 +22,6 @@ error_reporting(E_ALL);
 
     $result = mysqli_query($conn, $sql);
 
-    echo $result;
-
     $click_num="";
     $meta="";
     while($row = mysql_fetch_array($result)){
