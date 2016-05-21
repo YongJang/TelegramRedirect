@@ -22,7 +22,7 @@ error_reporting(E_ALL);
 
     $result = mysqli_query($conn, $sql);
 
-    $row = mysql_fetch_row($result));
+    $row = mysql_fetch_row($result);
     $click_num = $row[1];
     $meta = $row[2];
 
