@@ -18,9 +18,11 @@ error_reporting(E_ALL);
 
     $test = "<h1>".$url."</h1>";
 
-    $sql = "SELECT click_num, meta FROM jobs WHERE url = \'".$url."\'";
+    $sql = "SELECT click_num, meta FROM jobs WHERE url = \`".$url."\`";
 
-    $result = mysql_query($sql);
+    $result = mysqli_query($conn, $sql);
+
+    echo $result;
 
     $click_num="";
     $meta="";
