@@ -18,15 +18,13 @@ error_reporting(E_ALL);
 
     $test = "<h1>".$url."</h1>";
 
-    $sql = "SELECT click_num, meta FROM jobs WHERE url = 'http://www.jobkorea.co.kr//Recruit/GI_Read/17169773?Oem_Code=C1&rPageCode=ST&PageGbn=ST' LIMIT 1";
+    $sql = "SELECT click_num, meta FROM jobs WHERE PK_aid = 10";
 
     $result = mysqli_query($conn, $sql);
 
-    $click_num="";
-    $meta="";
     $row = mysql_fetch_row($result));
-    $click_num = $row['click_num'];
-    $meta = $row['meta'];
+    $click_num = $row[1];
+    $meta = $row[2];
 
 
  ?>
