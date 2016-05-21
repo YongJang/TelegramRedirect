@@ -10,7 +10,7 @@ error_reporting(E_ALL);
     if(!$conn){
       die('Could not connect:'.mysql_error());
     }
-    echo 'Connected successfully';
+    echo '해당 링크로 연결 중입니다.';
 
     mysqli_query($conn, "set names utf8");
 
@@ -27,7 +27,6 @@ error_reporting(E_ALL);
     $row = mysqli_fetch_assoc($cursor);
     $click_num = $row["click_num"];
     $meta = $row["meta"];
-    echo "!!!!";
 
 
  ?>
@@ -45,11 +44,11 @@ error_reporting(E_ALL);
            this is  url
               <?php
                 echo $meta;
-                echo $sql;
               ?>
         </body>
 </html>
 
 <?php
   mysqli_close($conn);
+  header ("Location: $url");
  ?>
