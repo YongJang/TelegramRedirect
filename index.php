@@ -12,7 +12,7 @@
     $url = $_GET["url"];
 
     $test = "<h1>".$url."</h1>";
-
+/*
     $sql = "SELECT click_num, meta FROM jobs WHERE url = \'".$url."\'";
 
     $result = mysql_query($sql, $conn);
@@ -23,11 +23,12 @@
       $click_num = $row['click_num'];
       $meta = $row['meta'];
     }
+*/
  ?>
 <html>
         <head>
           <?php
-          echo $meta;
+      //    echo $meta;
           ?>
 
 
@@ -36,7 +37,7 @@
         <body>
            this is  url
               <?php
-                echo $meta;
+              //  echo $meta;
                 echo $test;
               ?>
         </body>
