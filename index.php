@@ -22,9 +22,9 @@ error_reporting(E_ALL);
 
     $result = mysqli_query($conn, $sql);
 
-    $click_num;
-    $meta;
-    while($row = mysql_fetch_array($result)){
+    $click_num="";
+    $meta="";
+    while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
       $click_num = $row['click_num'];
       $meta = $row['meta'];
     }
