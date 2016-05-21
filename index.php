@@ -6,22 +6,21 @@ error_reporting(E_ALL);
     $password = "yongjang";
     $mysql_db = "telegramdb";
 
-    $conn = mysql_connect($servername, $username, $password);
+    $conn = mysqli_connect($servername, $username, $password, $mysql_db);
     if($conn){
       die('Could not connect:'.mysql_error());
     }
     echo 'Connected successfully';
-//    $dbconn = mysql_select_db($mysql_db, $conn);
 
-//    mysql_query("set names utf8");
+    mysqli_query($conn, "set names utf8");
 
     $url = $_GET["url"];
 
     $test = "<h1>".$url."</h1>";
-/*
+
     $sql = "SELECT click_num, meta FROM jobs WHERE url = \'".$url."\'";
 
-    $result = mysql_query($sql, $conn);
+    $result = mysqli_query($conn, $sql);
 
     $click_num;
     $meta;
@@ -29,12 +28,12 @@ error_reporting(E_ALL);
       $click_num = $row['click_num'];
       $meta = $row['meta'];
     }
-*/
+
  ?>
 <html>
         <head>
           <?php
-      //    echo $meta;
+          echo $meta;
           ?>
 
 
@@ -43,7 +42,7 @@ error_reporting(E_ALL);
         <body>
            this is  url
               <?php
-              //  echo $meta;
+                echo $meta;
                 echo $test;
               ?>
         </body>
