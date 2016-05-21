@@ -6,7 +6,7 @@ error_reporting(E_ALL);
     $password = "yongjang";
     $mysql_db = "telegramdb";
 
-    $conn = new mysql_connect($servername, $username, $password);
+    $conn = mysql_connect($servername, $username, $password);
     if($conn){
       die('Could not connect:'.mysql_error());
     }
