@@ -50,5 +50,5 @@ error_reporting(E_ALL);
 </html>
 
 <?php
-  mysql_close($conn);
+  mysqli_close($conn);
  ?>
