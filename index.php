@@ -24,10 +24,10 @@ error_reporting(E_ALL);
 
     $click_num="";
     $meta="";
-    while($row = mysql_fetch_array($result)){
-      $click_num = $row['click_num'];
-      $meta = $row['meta'];
-    }
+    $row = mysql_fetch_assoc($result);
+    $click_num = $row['click_num'];
+    $meta = $row['meta'];
+
 
  ?>
 <html>
