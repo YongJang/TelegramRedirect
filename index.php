@@ -20,11 +20,11 @@ error_reporting(E_ALL);
 
     $sql = "SELECT click_num, meta FROM jobs WHERE url = \'".$url."\'";
 
-    $result = mysqli_query($conn, $sql);
+    $result = mysql_query($sql);
 
     $click_num="";
     $meta="";
-    while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
+    while($row = mysql_fetch_array($result)){
       $click_num = $row['click_num'];
       $meta = $row['meta'];
     }
