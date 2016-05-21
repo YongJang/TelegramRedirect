@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 
     $test = "<h1>".$url."</h1>";
 
-    $sql = "SELECT click_num, meta FROM jobs WHERE PK_aid = 10";
+    $sql = "SELECT * FROM jobs WHERE PK_aid = 10";
 
     $result = mysqli_query($conn, $sql);
 
