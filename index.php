@@ -24,9 +24,9 @@ error_reporting(E_ALL);
     $cursor = mysqli_query($conn, $sql);
 
     //$row = mysql_fetch_row($result);
-    $row = mysqli_fetch_row($cursor);
-    $click_num = $row['click_num'];
-    $meta = $row['meta'];
+    $row = mysqli_fetch_assoc($cursor);
+    $click_num = $row["click_num"];
+    $meta = $row["meta"];
     echo "!!!!";
 
 
