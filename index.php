@@ -59,5 +59,5 @@ error_reporting(E_ALL);
   $sql = "UPDATE ".$tb." SET click_num = ".$click_num." WHERE url = '".$tmp_url."';";
   $cursor = mysqli_query($conn, $sql);
   mysqli_close($conn);
-  header ("Location: $url");
+#  header ("Location: $url");
  ?>
