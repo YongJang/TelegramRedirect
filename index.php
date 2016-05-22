@@ -19,6 +19,9 @@ error_reporting(E_ALL);
 
     $test = "<h1>".$url."</h1>";
 
+    echo "tb : ".$tb;
+    echo "url : ".$url;
+
     $sql = "SELECT * FROM ".$tb." WHERE url = '".$url."' LIMIT 1";
 
     //$result = mysqli_query($conn, $sql);
