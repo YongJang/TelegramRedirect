@@ -15,10 +15,11 @@ error_reporting(E_ALL);
     mysqli_query($conn, "set names utf8");
 
     $url = $_GET["url"];
+    $tb = $_GET["tb"];
 
     $test = "<h1>".$url."</h1>";
 
-    $sql = "SELECT * FROM jobs WHERE url = '".$url."' LIMIT 1";
+    $sql = "SELECT * FROM ".$tb." WHERE url = '".$url."' LIMIT 1";
 
     //$result = mysqli_query($conn, $sql);
     $cursor = mysqli_query($conn, $sql);
@@ -49,6 +50,9 @@ error_reporting(E_ALL);
 </html>
 
 <?php
+  $click_num = $click_num +1;
+  $sql = "UPDATE ".$tb." SET click_num = ".$click_num." WHERE url = '".$url."';"
+  $cursor = mysqli_query($conn, $sql);
   mysqli_close($conn);
   header ("Location: $url");
  ?>
