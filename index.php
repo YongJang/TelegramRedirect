@@ -19,8 +19,8 @@ error_reporting(E_ALL);
 
     $test = "<h1>".$url."</h1>";
 
-    echo "tb : ".$tb;
-    echo "url : ".$url;
+    echo "tb : ".$tb."\n";
+    echo "url : ".$url."\n";
 
     $sql = "SELECT * FROM ".$tb." WHERE url = '".$url."' LIMIT 1";
 
