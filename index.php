@@ -54,7 +54,9 @@ error_reporting(E_ALL);
 
 <?php
   $click_num = $click_num +1;
-  $sql = "UPDATE ".$tb." SET click_num = ".$click_num." WHERE url = '".$url."';";
+  $tmp_url = $url;
+  $tmp_url = str_replace("&", "%26", $tmp_url);
+  $sql = "UPDATE ".$tb." SET click_num = ".$click_num." WHERE url = '".$tmp_url."';";
   $cursor = mysqli_query($conn, $sql);
   mysqli_close($conn);
   #header ("Location: $url");
