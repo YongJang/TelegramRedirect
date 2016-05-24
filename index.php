@@ -25,8 +25,10 @@ error_reporting(E_ALL);
 
 
     $agent = $_SERVER['HTTP_USER_AGENT'];
-    $botfindsql = "INSERT INTO bot (name) VALUES ('".$agent."');";
-    $cursor = mysqli_query($conn, $botfindsql);
+    // if user is Telegram, USER_AGENT is
+    // TelegramBot (like TwitterBot)
+    // $botfindsql = "INSERT INTO bot (name) VALUES ('".$agent."');";
+    // $cursor = mysqli_query($conn, $botfindsql);
 
 
     $test = "<h1>".$url."</h1>";
@@ -68,8 +70,12 @@ error_reporting(E_ALL);
 <?php
   $tmp_url = $url;
   $tmp_url = str_replace("&", "%26", $tmp_url);
-  $sql = "UPDATE ".$tb." SET click_num = click_num + 1 WHERE url = '".$tmp_url."';";
-  $cursor = mysqli_query($conn, $sql);
+  
+  if($agent != "TelegramBot (like TwitterBot)"){
+    $sql = "UPDATE ".$tb." SET click_num = click_num + 1 WHERE url = '".$tmp_url."';";
+    $cursor = mysqli_query($conn, $sql);
+  }
+
   mysqli_close($conn);
   header ("Location: $url");
   }
