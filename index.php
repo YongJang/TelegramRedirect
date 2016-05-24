@@ -24,6 +24,9 @@ error_reporting(E_ALL);
 
 
 
+    $agent = $_SERVER['HTTP_USER_AGENT'];
+    $botfindsql = "INSERT INTO bot (name) VALUES ('".$agent."');";
+    $cursor = mysqli_query($conn, $botfindsql);
 
 
     $test = "<h1>".$url."</h1>";
