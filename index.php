@@ -2,11 +2,11 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-    if($_GET["url"]){
+    if(isset($_GET["url"])){
       $url = $_GET["url"];
       $tb = $_GET["tb"];
     }
-    if($url){
+    if(isset($url)){
     $servername = "telegramdb.cctjzlx6kmlc.ap-northeast-1.rds.amazonaws.com";
     $username = "yongjang";
     $password = "yongjang";
