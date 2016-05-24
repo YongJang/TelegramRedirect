@@ -1,6 +1,12 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+
+    if($_GET["url"]){
+      $url = $_GET["url"];
+      $tb = $_GET["tb"];
+    }
+    if($url){
     $servername = "telegramdb.cctjzlx6kmlc.ap-northeast-1.rds.amazonaws.com";
     $username = "yongjang";
     $password = "yongjang";
@@ -14,13 +20,17 @@ error_reporting(E_ALL);
 
     mysqli_query($conn, "set names utf8");
 
-    $url = $_GET["url"];
-    $tb = $_GET["tb"];
+
+
+
+
+
 
     $test = "<h1>".$url."</h1>";
 
     echo "tb : ".$tb."\n";
     echo "url : ".$url."\n";
+
 
     $sql = "SELECT * FROM ".$tb." WHERE url = '".$url."' LIMIT 1";
 
@@ -59,4 +69,5 @@ error_reporting(E_ALL);
   $cursor = mysqli_query($conn, $sql);
   mysqli_close($conn);
   header ("Location: $url");
+  }
  ?>
