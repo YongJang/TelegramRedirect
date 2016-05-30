@@ -5,6 +5,7 @@ error_reporting(E_ALL);
     if(isset($_GET["url"])){
       $url = $_GET["url"];
       $tb = $_GET["tb"];
+      $uid = $_GET["uid"];
     }
     if(isset($url)){
     $servername = "telegramdb.cctjzlx6kmlc.ap-northeast-1.rds.amazonaws.com";
@@ -70,7 +71,7 @@ error_reporting(E_ALL);
 <?php
   $tmp_url = $url;
   $tmp_url = str_replace("&", "%26", $tmp_url);
-  
+
   if($agent != "TelegramBot (like TwitterBot)"){
     $sql = "UPDATE ".$tb." SET click_num = click_num + 1 WHERE url = '".$tmp_url."';";
     $cursor = mysqli_query($conn, $sql);
