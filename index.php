@@ -7,7 +7,7 @@ error_reporting(E_ALL);
       $tb = $_GET["tb"];
       $uid = $_GET["uid"];
     }
-    if(isset($url)){
+    if(isset($aid)){
     $servername = "telegramdb.cctjzlx6kmlc.ap-northeast-1.rds.amazonaws.com";
     $username = "yongjang";
     $password = "yongjang";
