@@ -3,7 +3,7 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
     if(isset($_GET["url"])){
-      $url = $_GET["url"];
+      $aid = $_GET["url"];
       $tb = $_GET["tb"];
       $uid = $_GET["uid"];
     }
@@ -32,19 +32,20 @@ error_reporting(E_ALL);
     // $cursor = mysqli_query($conn, $botfindsql);
 
 
-    $test = "<h1>".$url."</h1>";
+    $test = "<h1>".$aid."</h1>";
 
     echo "tb : ".$tb."\n";
-    echo "url : ".$url."\n";
+    echo "url : ".$aid."\n";
 
 
-    $sql = "SELECT * FROM ".$tb." WHERE url = '".$url."' LIMIT 1";
+    $sql = "SELECT * FROM ".$tb." WHERE PK_aid = '".$aid."' LIMIT 1";
 
     //$result = mysqli_query($conn, $sql);
     $cursor = mysqli_query($conn, $sql);
 
     //$row = mysql_fetch_row($result);
     $row = mysqli_fetch_assoc($cursor);
+    $url = $row["url"]
     $click_num = $row["click_num"];
     $meta = $row["meta"];
 
