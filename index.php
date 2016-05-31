@@ -1,6 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
+  print("one");
 
     if(isset($_GET["url"])){
       $aid = $_GET["url"];
@@ -23,7 +24,7 @@ error_reporting(E_ALL);
 
 
 
-
+print("two");
 
     $agent = $_SERVER['HTTP_USER_AGENT'];
     // if user is Telegram, USER_AGENT is
@@ -52,6 +53,7 @@ error_reporting(E_ALL);
     $high = $row["high"];
 
     if($tb == "information"){
+      print("three");
       $sql = "SELECT * FROM users WHERE PK_uid = '".$uid."' LIMIT 1";
       $cursor = mysqli_query($conn, $sql);
       $row = mysqli_fetch_assoc($cursor);
