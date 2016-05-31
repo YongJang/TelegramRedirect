@@ -48,6 +48,63 @@ error_reporting(E_ALL);
     $url = $row["url"];
     $click_num = $row["click_num"];
     $meta = $row["meta"];
+    $kGroup = $row["k_group"];
+    $high = $row["high"];
+
+    if($tb == "information"){
+      $sql = "SELECT * FROM users WHERE PK_uid = '".$uid."' LIMIT 1";
+      $cursor = mysqli_query($conn, $sql);
+      $row = mysqli_fetch_assoc($cursor);
+      $user_kGroup = $row["k_group"];
+
+      if($high == "IT"){
+        $tableName = "relationIT";
+      }else{
+        $tableName = "relationEconomy";
+      }
+      $sql = "SELECT * FROM ".$tableName." WHERE PK_uid = '".$uid."' LIMIT 1";
+      $cursor = mysqli_query($conn, $sql);
+      $row = mysqli_fetch_assoc($cursor);
+      // relation 테이블에 유저 테이블이 존재하지 않을 때
+      if(safeCount($row) < 1){
+        $sql = "INSERT INTO ".$tableName." (PK_uid, G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, ETC) VALUES ('".$uid."',0,0,0,0,0,0,0,0,0,0,0);";
+        $cursor = mysqli_query($conn, $sql);
+      }
+      // relation 테이블 업데이트
+      if((int)$kGroup < 11 && (int)$kGroup > 0){
+        $sql = "UPDATE ".$tableName." SET G".$kGroup." = G".$kGroup." + 1 WHERE PK_uid = '".$uid."';";
+      }else{
+        $sql = "UPDATE ".$tableName." SET ETC = ETC + 1 WHERE PK_uid = '".$uid."';";
+      }
+      $cursor = mysqli_query($conn, $sql);
+      // 가장 수치 높은 k_group 계산
+      $sql = "SELECT * FROM ".$tableName." WHERE PK_uid = '".$uid."' LIMIT 1";
+      $cursor = mysqli_query($conn, $sql);
+      $row = mysqli_fetch_row($cursor);
+      $karray = array();
+      for($i = 1; $i <= 10 $i++){
+        array_push($karray, (int)$row[$i]);
+      }
+      $maxIndex = 0;
+      $sumOfKgroup = 0;
+      for($i = 0; $i <= safeCount($karray); $i++){
+        $sumOfKgroup = $sumOfKgroup + $karray[$i];
+        if($karray[$i] > $maxIndex){
+          $maxIndex = $i;
+        }
+      }
+      // 데이터 베이스에서는 1 부터 시작하므로 1을 더함
+      $maxIndex = $maxIndex + 1;
+      // 유저의 k_group 정보를 업데이트
+      // $sumOfKgroup > n 에서 n은 kgroup을 지정하기 위한 최소한의 데이터 사이즈
+      if($sumOfKgroup > 0){
+        if($high == "IT"){
+          $sql = "UPDATE users SET kgroupIT = ".$maxIndex." WHERE PK_uid = '".$uid."';";
+        }else{
+          $sql = "UPDATE users SET kgroupEconomy = ".$maxIndex." WHERE PK_uid = '".$uid."';";
+        }
+      }
+    }
 
 
  ?>
@@ -62,7 +119,6 @@ error_reporting(E_ALL);
 
         </head>
         <body>
-           this is  url
               <?php
                 echo $meta;
               ?>
@@ -80,5 +136,10 @@ error_reporting(E_ALL);
 
   mysqli_close($conn);
   header ("Location: $tmp_url");
+  }
+
+  function safeCount($array) {
+    if (isset($array)) return count($array);
+    return -1;
   }
  ?>
