@@ -79,12 +79,13 @@ error_reporting(E_ALL);
       }else{
         $sql = "UPDATE ".$tableName." SET ETC = ETC + 1 WHERE PK_uid = '".$uid."';";
       }
-      /*
+
       $cursor = mysqli_query($conn, $sql);
       // 가장 수치 높은 k_group 계산
       $sql = "SELECT * FROM ".$tableName." WHERE PK_uid = '".$uid."' LIMIT 1";
       $cursor = mysqli_query($conn, $sql);
       $row = mysqli_fetch_row($cursor);
+      /*
       $karray = array();
       for($i = 1; $i <= 10 $i++){
         array_push($karray, (int)$row[$i]);
