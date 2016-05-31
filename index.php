@@ -88,7 +88,7 @@ error_reporting(E_ALL);
       $karray = array();
 
       for($i = 1; $i <= 10 $i++){
-        array_push($karray, $row[0]);
+        array_push($karray, $row[1]);
       }
       /*
       $maxIndex = 0;
