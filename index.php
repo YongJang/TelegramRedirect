@@ -90,7 +90,7 @@ error_reporting(E_ALL);
       for($i = 1; $i <= 10; $i++){
         array_push($karray, $row[$i]);
       }
-      /*
+
       $maxIndex = 0;
       $sumOfKgroup = 0;
       for($i = 0; $i <= safeCount($karray); $i++){
@@ -111,7 +111,7 @@ error_reporting(E_ALL);
         }
         $cursor = mysqli_query($conn, $sql);
       }
-      */
+      
     }
 
 
