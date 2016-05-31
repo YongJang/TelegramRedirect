@@ -71,14 +71,14 @@ error_reporting(E_ALL);
 
 <?php
   $tmp_url = $url;
-  $tmp_url = str_replace("&", "%26", $tmp_url);
+  $tmp_url = str_replace("%26", "&", $tmp_url);
 
   if($agent != "TelegramBot (like TwitterBot)"){
-    $sql = "UPDATE ".$tb." SET click_num = click_num + 1 WHERE url = '".$tmp_url."';";
+    $sql = "UPDATE ".$tb." SET click_num = click_num + 1 WHERE PK_aid = '".$aid."';";
     $cursor = mysqli_query($conn, $sql);
   }
 
   mysqli_close($conn);
-  header ("Location: $url");
+  header ("Location: $tmp_url");
   }
  ?>
