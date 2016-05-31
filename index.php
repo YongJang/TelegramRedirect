@@ -87,8 +87,8 @@ error_reporting(E_ALL);
       $row = mysqli_fetch_row($cursor);
       $karray = array();
 
-      for($i = 1; $i <= 10 $i++){
-        array_push($karray, 0);
+      for($i = 1; $i <= 10; $i++){
+        array_push($karray, $row[$i]);
       }
       /*
       $maxIndex = 0;
