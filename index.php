@@ -51,7 +51,7 @@ print("two");
     $meta = $row["meta"];
     $kGroup = $row["k_group"];
     $high = $row["high"];
-
+/*
     if($tb == "information"){
       print("three");
       $sql = "SELECT * FROM users WHERE PK_uid = '".$uid."' LIMIT 1";
@@ -108,7 +108,7 @@ print("two");
       }
     }
 
-
+*/
  ?>
 <html>
         <head>
