@@ -45,7 +45,7 @@ error_reporting(E_ALL);
 
     //$row = mysql_fetch_row($result);
     $row = mysqli_fetch_assoc($cursor);
-    $url = $row["url"]
+    $url = $row["url"];
     $click_num = $row["click_num"];
     $meta = $row["meta"];
 
