@@ -85,11 +85,11 @@ error_reporting(E_ALL);
       $sql = "SELECT * FROM ".$tableName." WHERE PK_uid = '".$uid."' LIMIT 1";
       $cursor = mysqli_query($conn, $sql);
       $row = mysqli_fetch_row($cursor);
-      /*
       $karray = array();
       for($i = 1; $i <= 10 $i++){
         array_push($karray, (int)$row[$i]);
       }
+      /*
       $maxIndex = 0;
       $sumOfKgroup = 0;
       for($i = 0; $i <= safeCount($karray); $i++){
