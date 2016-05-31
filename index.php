@@ -1,7 +1,7 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-  print("one");
+
 
     if(isset($_GET["url"])){
       $aid = $_GET["url"];
@@ -24,7 +24,7 @@ error_reporting(E_ALL);
 
 
 
-print("two");
+
 
     $agent = $_SERVER['HTTP_USER_AGENT'];
     // if user is Telegram, USER_AGENT is
@@ -51,9 +51,9 @@ print("two");
     $meta = $row["meta"];
     $kGroup = $row["k_group"];
     $high = $row["high"];
-/*
+
     if($tb == "information"){
-      print("three");
+      print("one");
       $sql = "SELECT * FROM users WHERE PK_uid = '".$uid."' LIMIT 1";
       $cursor = mysqli_query($conn, $sql);
       $row = mysqli_fetch_assoc($cursor);
@@ -64,6 +64,7 @@ print("two");
       }else{
         $tableName = "relationEconomy";
       }
+      /*
       $sql = "SELECT * FROM ".$tableName." WHERE PK_uid = '".$uid."' LIMIT 1";
       $cursor = mysqli_query($conn, $sql);
       $row = mysqli_fetch_assoc($cursor);
@@ -106,9 +107,10 @@ print("two");
           $sql = "UPDATE users SET kgroupEconomy = ".$maxIndex." WHERE PK_uid = '".$uid."';";
         }
       }
+      */
     }
 
-*/
+
  ?>
 <html>
         <head>
