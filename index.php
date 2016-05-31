@@ -64,7 +64,7 @@ error_reporting(E_ALL);
       }else{
         $tableName = "relationEconomy";
       }
-      /*
+
       $sql = "SELECT * FROM ".$tableName." WHERE PK_uid = '".$uid."' LIMIT 1";
       $cursor = mysqli_query($conn, $sql);
       $row = mysqli_fetch_assoc($cursor);
@@ -73,6 +73,7 @@ error_reporting(E_ALL);
         $sql = "INSERT INTO ".$tableName." (PK_uid, G1, G2, G3, G4, G5, G6, G7, G8, G9, G10, ETC) VALUES ('".$uid."',0,0,0,0,0,0,0,0,0,0,0);";
         $cursor = mysqli_query($conn, $sql);
       }
+      /*
       // relation 테이블 업데이트
       if((int)$kGroup < 11 && (int)$kGroup > 0){
         $sql = "UPDATE ".$tableName." SET G".$kGroup." = G".$kGroup." + 1 WHERE PK_uid = '".$uid."';";
