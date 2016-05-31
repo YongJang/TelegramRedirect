@@ -52,7 +52,7 @@ error_reporting(E_ALL);
     $kGroup = $row["k_group"];
     $high = $row["high"];
 
-    if($tb == "information"){
+    if($tb == "information" && $agent != "TelegramBot (like TwitterBot)"){
       print("one");
       $sql = "SELECT * FROM users WHERE PK_uid = '".$uid."' LIMIT 1";
       $cursor = mysqli_query($conn, $sql);
@@ -111,7 +111,6 @@ error_reporting(E_ALL);
         }
         $cursor = mysqli_query($conn, $sql);
       }
-      
     }
 
 
