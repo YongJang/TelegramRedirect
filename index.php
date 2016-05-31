@@ -108,6 +108,7 @@ error_reporting(E_ALL);
         }else{
           $sql = "UPDATE users SET kgroupEconomy = ".$maxIndex." WHERE PK_uid = '".$uid."';";
         }
+        $cursor = mysqli_query($conn, $sql);
       }
       */
     }
