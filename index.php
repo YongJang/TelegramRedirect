@@ -9,7 +9,7 @@ error_reporting(E_ALL);
       $uid = $_GET["uid"];
     }
     if(isset($aid)){
-    $servername = "telegramdb.cctjzlx6kmlc.ap-northeast-1.rds.amazonaws.com";
+    $servername = "telegramdb.cjks7yer9qjg.ap-northeast-2.rds.amazonaws.com";
     $username = "yongjang";
     $password = "yongjang";
     $mysql_db = "telegramdb";
